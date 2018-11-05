@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "VakkenKoppelenCreate")
 </p>
 <table class="table">
     <tr>
@@ -30,9 +30,9 @@
                 @Html.DisplayFor(modelItem => item.VakCode)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.VakId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.VakId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.VakId })
+                @Html.ActionLink("Edit", "VakkenKoppelenEdit", new { id = item.VakId }) |
+                @Html.ActionLink("Details", "VakkenKoppelenDetails", new { id = item.VakId }) |
+                @Html.ActionLink("Delete", "VakkenKoppelenDelete", new { id = item.VakId })
             </td>
         </tr>
     }

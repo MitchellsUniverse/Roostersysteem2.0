@@ -272,10 +272,6 @@
     <Content Include="Views\Persoon\Details.cshtml" />
     <Content Include="Views\Persoon\Edit.cshtml" />
     <Content Include="Views\Persoon\Index.cshtml" />
-    <Content Include="Views\Vak\Create.cshtml" />
-    <Content Include="Views\Vak\Delete.cshtml" />
-    <Content Include="Views\Vak\Details.cshtml" />
-    <Content Include="Views\Vak\Edit.cshtml" />
     <Content Include="Views\Vak\Contacturen.cshtml" />
     <Content Include="Views\UrenRoosteraar\Create.cshtml" />
     <Content Include="Views\UrenRoosteraar\Delete.cshtml" />
@@ -290,6 +286,14 @@
     <Content Include="Views\Vak\VakkenKoppelen.cshtml" />
     <Content Include="Views\Rooster\Index.cshtml" />
     <Content Include="Views\Rooster\BeschikbaarheidOpvragen.cshtml" />
+    <Content Include="Views\Vak\ContacturenCreate.cshtml" />
+    <Content Include="Views\Vak\ContacturenDelete.cshtml" />
+    <Content Include="Views\Vak\ContacturenDetails.cshtml" />
+    <Content Include="Views\Vak\ContacturenEdit.cshtml" />
+    <Content Include="Views\Vak\VakkenKoppelenEdit.cshtml" />
+    <Content Include="Views\Vak\VakkenKoppelenCreate.cshtml" />
+    <Content Include="Views\Vak\VakkenKoppelenDelete.cshtml" />
+    <Content Include="Views\Vak\VakkenKoppelenDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,16 +1,15 @@
 ﻿@model Roostersysteem.Models.Vak
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "VakkenKoppelenEdit";
 }
-
 <h2>Edit</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Vak</h4>
         <hr />
@@ -42,7 +41,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "VakkenKoppelen")
 </div>
 
 @section Scripts {

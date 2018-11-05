@@ -1,8 +1,9 @@
 ﻿@model Roostersysteem.Models.Vak
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "ContacturenDetails";
 }
+
 
 <h2>Details</h2>
 
@@ -29,6 +30,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.VakId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "ContacturenEdit", new { id = Model.VakId }) |
+    @Html.ActionLink("Back to List", "Contacturen")
 </p>
