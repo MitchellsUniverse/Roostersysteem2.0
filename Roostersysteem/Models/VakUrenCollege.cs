@@ -6,11 +6,13 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace Roostersysteem.Models
 {
-    using System;
-    using System.Collections.Generic;
+
     
     public partial class VakUrenCollege
     {
@@ -21,5 +23,8 @@ namespace Roostersysteem.Models
     
         public virtual UrenCollege UrenCollege { get; set; }
         public virtual Vak Vak { get; set; }
+
+        //public DbSet<Vak> Vakken { get; set; }
+        //public DbSet<UrenCollege> urenColleges { get; set; }
     }
 }

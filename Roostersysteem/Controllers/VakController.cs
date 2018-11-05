@@ -17,24 +17,9 @@ namespace Roostersysteem.Controllers
         // GET: Vak
         public ActionResult Contacturen()
         {
+              
             return View(db.Vaks.ToList());
         }
-
-        // GET: Vak/Details/5
-        public ActionResult ContacturenDetails(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Vak vak = db.Vaks.Find(id);
-            if (vak == null)
-            {
-                return HttpNotFound();
-            }
-            return View(vak);
-        }
-
         // GET: Vak/Create
         public ActionResult ContacturenCreate()
         {
@@ -57,6 +42,7 @@ namespace Roostersysteem.Controllers
 
             return View(vak);
         }
+
 
         // GET: Vak/Edit/5
         public ActionResult ContacturenEdit(int? id)
@@ -87,32 +73,6 @@ namespace Roostersysteem.Controllers
                 return RedirectToAction("Contacturen");
             }
             return View(vak);
-        }
-
-        // GET: Vak/Delete/5
-        public ActionResult ContacturenDelete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Vak vak = db.Vaks.Find(id);
-            if (vak == null)
-            {
-                return HttpNotFound();
-            }
-            return View(vak);
-        }
-
-        // POST: Vak/Delete/5
-        [HttpPost, ActionName("ContacturenDelete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Vak vak = db.Vaks.Find(id);
-            db.Vaks.Remove(vak);
-            db.SaveChanges();
-            return RedirectToAction("Contacturen");
         }
 
 
@@ -209,25 +169,25 @@ namespace Roostersysteem.Controllers
             return View(vak);
         }
 
-        // commented om error te voorkomen. Kan aangepast worden met de juiste waarden.
+         //commented om error te voorkomen. Kan aangepast worden met de juiste waarden.
 
         // POST: Vak/Delete/5
-        //[HttpPost, ActionName("VakkenKoppelenDelete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Vak vak = db.Vaks.Find(id);
-        //    db.Vaks.Remove(vak);
-        //    db.SaveChanges();
-        //    return RedirectToAction("VakkenKoppelen");
-        //}
+        [HttpPost, ActionName("VakkenKoppelenDelete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Vak vak = db.Vaks.Find(id);
+            db.Vaks.Remove(vak);
+            db.SaveChanges();
+            return RedirectToAction("VakkenKoppelen");
+        }
 
 
 
 
 
 
-            // overig
+        // overig
 
         protected override void Dispose(bool disposing)
         {
