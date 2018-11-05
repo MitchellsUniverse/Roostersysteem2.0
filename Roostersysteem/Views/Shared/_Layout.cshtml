@@ -25,37 +25,53 @@
             </div>
             <div class="navbar-collapse collapse" id="navbar-collapsible">
                 <ul class="nav navbar-nav navbar-left">
-                    <li>@Html.ActionLink("Rooster", "Index", "Rooster")</li>
+                    
                     <li class=" dropdown">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vakgegevens <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li class=" dropdown">
-                                @Html.ActionLink("Vakken toevoegen", "Contacturen", "Vak")
+                                @Html.ActionLink("Vakken", "Vakken", "Vak")
                             </li>
                             <li>
-                                @Html.ActionLink("Contacturen wijzigen", "Index", "VakUrenColleges")
+                                @Html.ActionLink("Contacturen vak wijzigen", "Index", "VakUrenColleges")
                             </li>
                             <li>
-                                @Html.ActionLink("Vakken Koppelen", "Index", "PersoonVak")
+                                @Html.ActionLink("Vakken Koppelen aan docenten", "Index", "PersoonVak")
                             </li>
-
+                            <li>
+                                @Html.ActionLink("Lokalen Types", "Index", "LokaalTypes")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Vakken indelen in lokalen", "Index", "VakLokaalTypes")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Colleges", "Index", "UrenColleges")
+                            </li>
+                        </ul>
+                    </li>
+                    <li class=" dropdown">
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rooster<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class=" dropdown">
+                                @Html.ActionLink("Rooster", "Index", "Rooster")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Uren Opvragen", "Index", "UrenRoosteraar")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Persoon Uren", "Index", "Persoonurens")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Beschikbaarheid Opvragen", "BeschikbaarheidOpvragen", "Rooster")
+                            </li>
                         </ul>
                     </li>
 
-                    <li>@Html.ActionLink("Uren Docent", "Index", "UrenDocent")</li>
-                    <li>@Html.ActionLink("Uren Opvragen", "Index", "UrenRoosteraar")</li>
-
-                    <li class=" dropdown">
-                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rooster <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class=" dropdown">
-                                @Html.ActionLink("Beschikbaarheid Opvragen", "BeschikbaarheidOpvragen", "Rooster")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Roosteraar", "Index", "Rooster")
-                            </li>
-
-                        </ul>
+                    <li>
+                        @Html.ActionLink("Beschikbaarheid doorgeven", "Index", "UrenBeschikbaarheids")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Uren Opvragen", "Index", "UrenRoosteraar")
                     </li>
                 </ul>
                 <div class="navbar-right">

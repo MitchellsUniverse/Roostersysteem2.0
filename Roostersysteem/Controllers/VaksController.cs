@@ -10,107 +10,107 @@ using Roostersysteem.Models;
 
 namespace Roostersysteem.Controllers
 {
-    public class UrenDocentController : Controller
+    public class VaksController : Controller
     {
         private RoosterDB db = new RoosterDB();
 
-        // GET: UrenDocent
+        // GET: Vaks
         public ActionResult Index()
         {
-            return View(db.UrenBeschikbaarheids.ToList());
+            return View(db.Vaks.ToList());
         }
 
-        // GET: UrenDocent/Details/5
+        // GET: Vaks/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UrenBeschikbaarheid urenBeschikbaarheid = db.UrenBeschikbaarheids.Find(id);
-            if (urenBeschikbaarheid == null)
+            Vak vak = db.Vaks.Find(id);
+            if (vak == null)
             {
                 return HttpNotFound();
             }
-            return View(urenBeschikbaarheid);
+            return View(vak);
         }
 
-        // GET: UrenDocent/Create
+        // GET: Vaks/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: UrenDocent/Create
+        // POST: Vaks/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UrenBeschikbaarheidId,TijdstipBeschikbaarheid,DagBeschikbaarheid")] UrenBeschikbaarheid urenBeschikbaarheid)
+        public ActionResult Create([Bind(Include = "VakId,VakNaam,VakCode")] Vak vak)
         {
             if (ModelState.IsValid)
             {
-                db.UrenBeschikbaarheids.Add(urenBeschikbaarheid);
+                db.Vaks.Add(vak);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(urenBeschikbaarheid);
+            return View(vak);
         }
 
-        // GET: UrenDocent/Edit/5
+        // GET: Vaks/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UrenBeschikbaarheid urenBeschikbaarheid = db.UrenBeschikbaarheids.Find(id);
-            if (urenBeschikbaarheid == null)
+            Vak vak = db.Vaks.Find(id);
+            if (vak == null)
             {
                 return HttpNotFound();
             }
-            return View(urenBeschikbaarheid);
+            return View(vak);
         }
 
-        // POST: UrenDocent/Edit/5
+        // POST: Vaks/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UrenBeschikbaarheidId,TijdstipBeschikbaarheid,DagBeschikbaarheid")] UrenBeschikbaarheid urenBeschikbaarheid)
+        public ActionResult Edit([Bind(Include = "VakId,VakNaam,VakCode")] Vak vak)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(urenBeschikbaarheid).State = EntityState.Modified;
+                db.Entry(vak).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(urenBeschikbaarheid);
+            return View(vak);
         }
 
-        // GET: UrenDocent/Delete/5
+        // GET: Vaks/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UrenBeschikbaarheid urenBeschikbaarheid = db.UrenBeschikbaarheids.Find(id);
-            if (urenBeschikbaarheid == null)
+            Vak vak = db.Vaks.Find(id);
+            if (vak == null)
             {
                 return HttpNotFound();
             }
-            return View(urenBeschikbaarheid);
+            return View(vak);
         }
 
-        // POST: UrenDocent/Delete/5
+        // POST: Vaks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            UrenBeschikbaarheid urenBeschikbaarheid = db.UrenBeschikbaarheids.Find(id);
-            db.UrenBeschikbaarheids.Remove(urenBeschikbaarheid);
+            Vak vak = db.Vaks.Find(id);
+            db.Vaks.Remove(vak);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

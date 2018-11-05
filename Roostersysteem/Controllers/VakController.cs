@@ -15,13 +15,13 @@ namespace Roostersysteem.Controllers
         private RoosterDB db = new RoosterDB();
 
         // GET: Vak
-        public ActionResult Contacturen()
+        public ActionResult Vakken()
         {
               
             return View(db.Vaks.ToList());
         }
         // GET: Vak/Create
-        public ActionResult ContacturenCreate()
+        public ActionResult VakkenToevoegen()
         {
             return View();
         }
@@ -31,13 +31,13 @@ namespace Roostersysteem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ContacturenCreate([Bind(Include = "VakId,VakNaam,VakCode")] Vak vak)
+        public ActionResult VakkenToevoegen([Bind(Include = "VakId,VakNaam,VakCode")] Vak vak)
         {
             if (ModelState.IsValid)
             {
                 db.Vaks.Add(vak);
                 db.SaveChanges();
-                return RedirectToAction("Contacturen");
+                return RedirectToAction("Vakken");
             }
 
             return View(vak);
@@ -45,7 +45,7 @@ namespace Roostersysteem.Controllers
 
 
         // GET: Vak/Edit/5
-        public ActionResult ContacturenEdit(int? id)
+        public ActionResult VakkenWijzigen(int? id)
         {
             if (id == null)
             {
@@ -64,29 +64,19 @@ namespace Roostersysteem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ContacturenEdit([Bind(Include = "VakId,VakNaam,VakCode")] Vak vak)
+        public ActionResult VakkenWijzigen([Bind(Include = "VakId,VakNaam,VakCode")] Vak vak)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(vak).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Contacturen");
+                return RedirectToAction("Vakken");
             }
             return View(vak);
-        }
-
-
-        // VAKKEN KOPPELEN
-
-
-        // GET: Vak
-        public ActionResult VakkenKoppelen()
-        {
-            return View(db.Vaks.ToList());
         }
 
         // GET: Vak/Details/5
-        public ActionResult VakkenKoppelenDetails(int? id)
+        public ActionResult VakkenDetails(int? id)
         {
             if (id == null)
             {
@@ -100,62 +90,11 @@ namespace Roostersysteem.Controllers
             return View(vak);
         }
 
-        // GET: Vak/Create
-        public ActionResult VakkenKoppelenCreate()
-        {
-            return View();
-        }
 
-        // POST: Vak/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult VakkenKoppelenCreate([Bind(Include = "VakId,VakNaam,VakCode")] Vak vak)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Vaks.Add(vak);
-                db.SaveChanges();
-                return RedirectToAction("VakkenKoppelen");
-            }
 
-            return View(vak);
-        }
-
-        // GET: Vak/Edit/5
-        public ActionResult VakkenKoppelenEdit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Vak vak = db.Vaks.Find(id);
-            if (vak == null)
-            {
-                return HttpNotFound();
-            }
-            return View(vak);
-        }
-
-        // POST: Vak/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult VakkenKoppelenEdit([Bind(Include = "VakId,VakNaam,VakCode")] Vak vak)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(vak).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("VakkenKoppelen");
-            }
-            return View(vak);
-        }
 
         // GET: Vak/Delete/5
-        public ActionResult VakkenKoppelenDelete(int? id)
+        public ActionResult VakkenVerwijderen(int? id)
         {
             if (id == null)
             {
@@ -169,17 +108,15 @@ namespace Roostersysteem.Controllers
             return View(vak);
         }
 
-         //commented om error te voorkomen. Kan aangepast worden met de juiste waarden.
-
         // POST: Vak/Delete/5
-        [HttpPost, ActionName("VakkenKoppelenDelete")]
+        [HttpPost, ActionName("VakkenDelete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Vak vak = db.Vaks.Find(id);
             db.Vaks.Remove(vak);
             db.SaveChanges();
-            return RedirectToAction("VakkenKoppelen");
+            return RedirectToAction("Vakken");
         }
 
 
