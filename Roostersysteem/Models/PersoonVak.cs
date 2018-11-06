@@ -20,5 +20,7 @@ namespace Roostersysteem.Models
     
         public virtual Persoon Persoon { get; set; }
         public virtual Vak Vak { get; set; }
+
+
     }
 }

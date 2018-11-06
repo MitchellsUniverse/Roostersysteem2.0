@@ -114,6 +114,7 @@ namespace Roostersysteem.Controllers
         }
 
         // POST: PersoonVak/Delete/5
+        // Extra schermweergave met de keuze of je de geselecteerde rij echt wilt verwijderen ja of nee.
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

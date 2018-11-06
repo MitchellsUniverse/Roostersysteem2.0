@@ -6,10 +6,10 @@
 
 <h2>Index</h2>
 
-<p>
+<!--Een vak toevoegen aan een docent-->
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" style="border:1px">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Persoon.PersoonVoornaam)
@@ -20,6 +20,7 @@
         <th></th>
     </tr>
 
+<!--Een Vak verwijderen, wijzigen of details tonen-->
 @foreach (var item in Model) {
     <tr>
         <td>
