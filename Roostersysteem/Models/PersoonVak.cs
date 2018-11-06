@@ -14,6 +14,7 @@ namespace Roostersysteem.Models
     
     public partial class PersoonVak
     {
+        //Automatisch gegenereerde properties vanuit de database.
         public Nullable<int> Persoon_Id { get; set; }
         public Nullable<int> Vak_Id { get; set; }
         public int PersoonVak_Id { get; set; }
