@@ -12,8 +12,8 @@ namespace Roostersysteem.Controllers
 {
     public class PersoonVakController : Controller
     {
-        private RoosterDB db = new RoosterDB();
 
+        private RoosterDB db = new RoosterDB();
         // GET: PersoonVak
         public ActionResult Index()
         {

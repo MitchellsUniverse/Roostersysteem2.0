@@ -10,8 +10,17 @@
 namespace Roostersysteem.Models
 {
     using System;
+    using System.Data.SqlClient;
     using System.Collections.Generic;
-    
+    using System.Data;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Net;
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Configuration;
+    using Roostersysteem.Models;
+
     public partial class PersoonVak
     {
         //Automatisch gegenereerde properties vanuit de database.
@@ -20,8 +29,6 @@ namespace Roostersysteem.Models
         public int PersoonVak_Id { get; set; }
     
         public virtual Persoon Persoon { get; set; }
-        public virtual Vak Vak { get; set; }
-
-
+        public virtual Vak Vak { get; set; }     
     }
 }
